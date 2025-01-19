@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        nav {
+            background: #004d99;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            background: url('image/healthimage.png') no-repeat center center/cover;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 8px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 1rem auto;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #004d99;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #f1f1f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(33.333% - 2rem);
+            min-width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #004d99;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #004d99;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#Key-features">Key-features</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Health Monitoring Services</h1>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Health Monitoring</h2>
+        <p>Our Health Monitoring Services are designed to empower seniors by providing them with the tools to effectively track and manage their health. With advanced technology integrated into user-friendly devices, we aim to make it easier for seniors to stay informed about their health status, ensuring they feel confident and secure in their daily lives.
+
+            We offer a range of health monitoring solutions that include real-time tracking of vital signs such as heart rate, blood pressure, and oxygen levels. These devices not only monitor health data but also provide alerts when any irregularities are detected, allowing caregivers and family members to respond quickly in emergencies.
+            
+            Our services are built with seniors in mind, offering simple-to-use interfaces that don’t compromise on functionality. Whether at home or on the go, seniors can easily stay connected to their health data through mobile apps, ensuring they are always in control of their health.
+            
+            By integrating health monitoring into everyday life, we help seniors live independently while ensuring their well-being. Our goal is to enhance their quality of life, reduce the risk of health emergencies, and provide families with peace of mind knowing their loved ones are being monitored 24/7.
+            
+            With our health monitoring solutions, seniors can embrace modern technology, stay healthier, and lead a more independent and fulfilling life.</p>
+    </section>
+
+    <section id="Key-features" class="section">
+        <h2>Key Features</h2>
+        <div class="content">
+            <div class="card">
+                <img src="image/realtimedata.jpg.crdownload" alt="Feature 1">
+                <h3>Real-Time Data</h3>
+                <p>Access real-time data on vital signs and activities, ensuring up-to-date information at your fingertips.</p>
+            </div>
+            <div class="card">
+                <img src="image/alert.jpg" alt="Feature 2">
+                <h3>Emergency Alerts</h3>
+                <p>Our system is equipped to send emergency alerts to caregivers and family members instantly.</p>
+            </div>
+            <div class="card">
+                <img src="image/mobileapp.jpg" alt="Feature 3">
+                <h3>Mobile App Integration</h3>
+                <p>Stay connected with a user-friendly mobile app to manage and monitor health reports anytime, anywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Why Choose Us?</h2>
+        <p>At Elderly Care Technology, we prioritize safety, independence, and quality of life for seniors. Our health monitoring services are trusted by families and caregivers to deliver reliable and accurate results, enabling peace of mind for all involved.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Elderly Care Technology. All rights reserved.</p>
+    </footer>
+</body>
+</html>

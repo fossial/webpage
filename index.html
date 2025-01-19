@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elderly Care Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #0066cc;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background: #004d99;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            background: url('image/oldman\ 2.jpg') no-repeat center center/cover;
+            height: 100vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            animation: zoomIn 1.5s ease-in-out;
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .hero:hover {
+            transform: scale(1.0.2); 
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+        }
+
+        .section {
+            padding: 2rem;
+            background: #fff;
+            margin: 1rem auto;
+            max-width: 1200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .service {
+            background: #f1f1f1;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 2rem);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background: #004d99;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            animation: slideUp 1s ease-in-out;
+        }
+        
+
+        .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    justify-content: center; 
+}
+
+.service {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 calc(45% - 1rem); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 280px; 
+    max-width: 450px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+         
+
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                flex: 1 1 100%;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Elderly Care with Technology</h1>
+    </header>
+
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="javascript:void(0);" onclick="showPopup()">Contact</a>
+    </nav>
+
+    <section id="hero" class="hero">
+        <h2>Empowering Seniors with Modern Solutions</h2>
+    </section>
+
+    <section class="section">
+        <h2>Welcome</h2>
+        <p>Welcome to Elderly Care Technology, where we believe in harnessing the power of modern technology to enhance the lives of seniors. Our mission is to provide innovative solutions that ensure the safety, health, and independence of the elderly. With our cutting-edge tools and personalized care plans, we strive to create an environment that empowers seniors to live confidently and comfortably. Explore our services to see how we can support your loved ones with the latest in elderly care technology.</p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>At Elderly Care Technology, we are dedicated to improving the quality of life for seniors through technology. Our team consists of healthcare professionals, technology experts, and caregivers who work together to develop solutions that cater to the unique needs of the elderly. From monitoring systems to health management apps, we create products that help seniors remain independent while staying connected to their families and caregivers. We understand that aging comes with challenges, and our goal is to make those years more enjoyable and secure by offering the latest in medical and lifestyle technology. We believe in making a difference in the lives of seniors and their families through reliable, user-friendly solutions.</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services">
+        <a href="health-monitoring.html" class="service-link">
+            <div class="service">
+                <img src="image/healthmonitoring.jpg" alt="Service 1">
+                <h3>Health Monitoring</h3>
+                <p>We offer advanced health monitoring devices that allow for remote tracking of vital signs.</p>
+            </div>
+        </a>
+        <a href="emergency-assestence.html" class="service-link">
+            <div class="service">
+                <img src="image/emergency2.jpg" alt="Service 2">
+                <h3>Emergency Assistance</h3>
+                <p>Our emergency assistance systems provide immediate help with just a button press.</p>
+            </div>
+        </a>
+        <a href="home-automation.html" class="service-link">
+            <div class="service">
+                <img src="image/homeautomationbanner-1.jpg" alt="Service 3">
+                <h3>Home Automation</h3>
+                <p>Smart home technology designed for seniors, making it easier to control home appliances and lighting.</p>
+            </div>
+        </a>
+        </div>
+    </section>
+
+    <!-- Popup Contact Form -->
+  <!--  <div class="popup" id="popup">
+        <div class="popup-content">
+            <h3>Contact Us</h3>
+            <p>Please fill in the form below to get in touch with us.</p>
+            <form>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>-->
+
+    <footer class="footer">
+        <p>&copy; 2025 Elderly Care Technology. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

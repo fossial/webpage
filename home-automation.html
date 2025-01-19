@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Automation</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background: #003366;
+
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Cards Section */
+        .card-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: calc(50% - 2rem);
+            min-width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Offer Card Styles */
+        .offer-card {
+            margin: 2rem auto;
+
+            text-align: center;
+            width: 60%;
+
+            max-width: 800px;
+
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer-card h3 {
+            font-size: 2rem;
+
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .offer-card p {
+            font-size: 1.2rem;
+
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('image/Home-Automation\ 2.jpg');
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            filter: blur(8px);
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out 0.2s;
+            z-index: 2;
+        }
+
+        .hero img {
+            position: absolute;
+            bottom: -50px;
+            right: 10%;
+            max-width: 300px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out 0.4s;
+            z-index: 2;
+        }
+
+        /* Scroll-In Animation (Triggered) */
+        .hero.in-view h2,
+        .hero.in-view p,
+        .hero.in-view img {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Content Sections */
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .content h2 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .content p {
+            color: #555;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        /* Key Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem auto;
+        }
+
+        .feature {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            width: calc(33.333% - 1rem);
+            min-width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature img {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Home Automation</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Key Features</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h2>Transform Your Home</h2>
+        <p>Experience the ultimate convenience and security with cutting-edge home automation technology.</p>
+        <img src="image/smart-home-device.png" alt="Smart Home Device">
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>
+            At Home Automation Solutions, we are committed to enhancing your lifestyle through the power of smart
+            technology.
+            Our mission is to provide innovative, efficient, and reliable home automation systems that are tailored to
+            meet the needs of
+            every home. With years of experience in the industry, we have become leaders in delivering cutting-edge
+            products designed to simplify your life. Whether you want to enhance security, improve energy
+            efficiency, or create a more comfortable living space,
+            we offer solutions that will transform your home into a smarter, safer, and more convenient place to live.
+        </p>
+    </section>
+
+    <section id="offer" class="content">
+        <div class="card offer-card">
+            <h3>What We Offer</h3>
+            <p>
+                We offer a wide range of home automation products and services designed to fit every need. From smart
+                lighting solutions that help save energy to advanced security systems that keep your home safe, we
+                provide products that enhance your home’s functionality and comfort. Our systems are easy to use, with
+                seamless integration across all your devices, allowing you to control everything with a simple touch or
+                voice command. We also offer personalized consultations to help you design the perfect home automation
+                setup that suits your lifestyle and preferences. Whether you're looking for simple automation or a fully
+                integrated smart home, we have the right solution for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="content">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="image/Smart-Lighting.png" alt="Smart Lighting">
+                <h3>Smart Lighting</h3>
+                <p>Control your home lighting from anywhere with smart bulbs and automation systems.</p>
+            </div>
+            <div class="feature">
+                <img src="image/Smart-home-security.jpg" alt="Smart Security">
+                <h3>Smart Security</h3>
+                <p>Keep your home safe with advanced cameras and security systems.</p>
+            </div>
+            <div class="feature">
+                <img src="image/voice.jpg" alt="Voice Assistant">
+                <h3>Voice Assistant</h3>
+                <p>Manage devices and get assistance using voice commands through AI-powered assistants.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Home Automation Solutions. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        const heroSection = document.querySelector('.hero');
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        heroSection.classList.add('in-view');
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        observer.observe(heroSection);
+    </script>
+</body>
+
+</html>
